@@ -1,0 +1,32 @@
+[
+  {
+    "imgURL":"http://localhost:8081/Look/ra/woman.png",
+    "imgURLR":"http://localhost:8081/Look/ra/v2.png",
+    "cImgURL":"http://localhost:8081/Look/1.jpg",
+    "title":"第一部分"
+  },
+  {
+    "imgURL":"http://localhost:8081/Look/ra/woman.png",
+    "imgURLR":"http://localhost:8081/Look/ra/v2.png",
+    "cImgURL":"http://localhost:8081/Look/2.jpg",
+    "title":"第二部分"
+  },
+  {
+    "imgURL":"http://localhost:8081/Look/ra/woman.png",
+    "imgURLR":"http://localhost:8081/Look/ra/v2.png",
+    "cImgURL":"http://localhost:8081/Look/3.jpg",
+    "title":"第三部分"
+  },
+  {
+    "imgURL":"http://localhost:8081/Look/ra/woman.png",
+    "imgURLR":"http://localhost:8081/Look/ra/v2.png",
+    "cImgURL":"http://localhost:8081/Look/4.jpg",
+    "title":"第四部分"
+  },
+  {
+    "imgURL":"http://localhost:8081/Look/ra/woman.png",
+    "imgURLR":"http://localhost:8081/Look/ra/v2.png",
+    "cImgURL":"http://localhost:8081/Look/5.jpg",
+    "title":"第五部分"
+  }
+]

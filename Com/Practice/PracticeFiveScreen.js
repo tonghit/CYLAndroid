@@ -1,0 +1,200 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+import React, { Component } from 'react';
+import { Platform, StyleSheet,Text,Dimensions,View,Image,TouchableOpacity,FlatList,WebView,ScrollView,Button,Alert, AppRegistry} from 'react-native';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+const { width,height } = Dimensions.get('window');
+let scale = Dimensions.get('window').scale ;
+import {RadioGroup, RadioButton} from 'react-native-flexi-radio-button'
+//import pct from "../pct"
+export default class PracticeFiveScreen extends Component<Props> {
+    constructor(){
+            super()
+            this.state = {
+                text: ''
+            }
+            this.onSelect = this.onSelect.bind(this)
+        }
+
+        onSelect(index, value){
+            this.setState({
+            text: `Selected index: ${index} , value: ${value}`
+            })
+        }
+
+    static navigationOptions = {
+        title: '第五部分',
+        headerStyle: {
+          backgroundColor: '#fff',
+
+        },
+        headerTintColor: '#000',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          alignSelf:'center'
+        },
+      };
+
+
+  render() {
+
+      return (
+        <ScrollView>
+            <View style={styles.schoolBackground}>
+               <View>
+                    <View style={styles.textOne}>
+                        <Text style={styles.tOne}>1.（囊橐）的拼音是？</Text>
+                    </View>
+                    <View style={styles.one}>
+                        <RadioGroup onSelect = {(index, value) => this.onSelect(index, value)}>
+                              <RadioButton value={'item1'} >
+                                  <Text>A. lí  mínɡ</Text>
+                              </RadioButton>
+
+                             <RadioButton value={'item2'}>
+                                  <Text>B. jì   hūn </Text>
+                              </RadioButton>
+
+                             <RadioButton value={'item3'}>
+                                  <Text>C.náng  tuó</Text>
+                             </RadioButton>
+
+                             <RadioButton value={'item4'}>
+                                   <Text>D.bú  yì</Text>
+                              </RadioButton>
+                         </RadioGroup>
+
+                    </View>
+               </View>
+
+               <View>
+                       <View style={styles.textOne}>
+                           <Text style={styles.tOne}>2.（人有喜庆，不可生嫉妒心）的下一句是？</Text>
+                       </View>
+                       <View style={styles.one}>
+                           <RadioGroup onSelect = {(index, value) => this.onSelect(index, value)}>
+                                 <RadioButton value={'item1'} >
+                                     <Text>A    要内外整洁</Text>
+                                 </RadioButton>
+
+                                <RadioButton value={'item2'}>
+                                     <Text>B   人有祸患，不可生喜幸心</Text>
+                                 </RadioButton>
+
+                                <RadioButton value={'item3'}>
+                                     <Text>C   勿 谋 良 田</Text>
+                                </RadioButton>
+
+                                <RadioButton value={'item4'}>
+                                      <Text>D   宴 客 切 勿 留 连</Text>
+                                 </RadioButton>
+                            </RadioGroup>
+
+                       </View>
+                  </View>
+
+                  <View>
+                          <View style={styles.textOne}>
+                              <Text style={styles.tOne}>3.（读书志在圣贤）的下一句是？</Text>
+                          </View>
+                          <View style={styles.one}>
+                              <RadioGroup onSelect = {(index, value) => this.onSelect(index, value)}>
+                                    <RadioButton value={'item1'} >
+                                        <Text>A    为官心存君国</Text>
+                                    </RadioButton>
+
+                                   <RadioButton value={'item2'}>
+                                        <Text>B   半丝半缕，恒念物力维艰。</Text>
+                                    </RadioButton>
+
+                                   <RadioButton value={'item3'}>
+                                        <Text>C   勿 谋 良 田</Text>
+                                   </RadioButton>
+
+                                   <RadioButton value={'item4'}>
+                                         <Text>D   瓦缶胜金玉</Text>
+                                    </RadioButton>
+                               </RadioGroup>
+
+                          </View>
+                     </View>
+                     <View>
+                         <View style={styles.textOne}>
+                             <Text style={styles.tOne}> 4.饔飧的意思是？</Text>
+                         </View>
+                         <View style={styles.one}>
+                             <RadioGroup onSelect = {(index, value) => this.onSelect(index, value)}>
+                                   <RadioButton value={'item1'} >
+                                       <Text>A    做饭，早饭和晚饭；饭食</Text>
+                                   </RadioButton>
+
+                                  <RadioButton value={'item2'}>
+                                       <Text>B   皇帝的御厨</Text>
+                                   </RadioButton>
+
+                                  <RadioButton value={'item3'}>
+                                       <Text>C   皇帝的奴仆</Text>
+                                  </RadioButton>
+
+                                  <RadioButton value={'item4'}>
+                                        <Text>D   皇帝的衣服</Text>
+                                   </RadioButton>
+                              </RadioGroup>
+
+                         </View>
+                    </View>
+                    <View style={styles.two}>
+                           <Text style={styles.tOnee} onPress={() => this.props.navigation.navigate('Susses')}>提交</Text>
+                    </View>
+               </View>
+        </ScrollView>
+              );
+
+    }
+
+}
+
+const styles = StyleSheet.create({
+    schoolBackground:{
+        width,
+        backgroundColor:'#rgba(255, 204, 51, 1)',
+    },
+    one:{
+        width:width-150,
+        flexDirection: 'row',
+//        justifyContent: 'space-around',
+        marginLeft:50,
+    },
+    textOne:{
+        width:width-100,
+        marginLeft:50,
+        marginTop:20,
+        borderWidth:1,
+        borderColor:'#000',
+        backgroundColor:'#fff',
+    },
+    tOne:{
+        color:'#000',
+        fontSize:20,
+        paddingTop:5,
+        paddingLeft:10
+    },
+    two:{
+        width:width/4,
+        marginLeft:150,
+        marginTop:20,
+        borderWidth:1,
+        borderColor:'#000',
+        backgroundColor:'#fff',
+        marginBottom:30,
+    },
+    tOnee:{
+        color:'#000',
+        fontSize:20,
+        paddingTop:5,
+        paddingLeft:20
+    }
+});
